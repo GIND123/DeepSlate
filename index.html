@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepSlate Tutor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Dyslexia Friendly Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+
+    <!-- Google APIs -->
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <script async defer src="https://accounts.google.com/gsi/client"></script>
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        /* Background and color handled by Tailwind classes in App.tsx/Root */
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.1); 
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.5); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(99, 102, 241, 0.5); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(99, 102, 241, 0.8); 
+      }
+      
+      /* Google Translate Customization */
+      .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+      }
+      body {
+        top: 0px !important;
+      }
+      #google_translate_element {
+        z-index: -1;
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+      .goog-te-gadget-simple {
+        background-color: white !important;
+        border: 1px solid #e2e8f0 !important;
+        padding: 8px !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+        font-family: 'Inter', sans-serif !important;
+      }
+      .dark .goog-te-gadget-simple {
+        background-color: #1e293b !important;
+        border-color: #334155 !important;
+        color: white !important;
+      }
+      .goog-te-gadget-icon {
+         display: none !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "d3": "https://aistudiocdn.com/d3@^7.9.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+<script type="text/javascript">
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en', 
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+  <body>
+    <!-- Hidden container for Google Translate Widget -->
+    <div id="google_translate_element"></div>
+    <div id="root"></div>
+  </body>
+</html>

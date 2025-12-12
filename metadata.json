@@ -1,0 +1,7 @@
+{
+  "name": "DeepSlate Tutor",
+  "description": "A multimodal AI reasoning tutor for math and physics that diagnoses student work and provides Socratic coaching.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
