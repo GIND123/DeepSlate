@@ -51,4 +51,6 @@ View the app demo : [DeepSlate Tutor](https://youtu.be/qum8ayrS1o0?si=YL6gQPxfse
 View the app in AI Studio: [DeepSlate Tutor App](https://ai.studio/apps/drive/1pcNvimrNXWecivfkcBIu2B3v7FkXC6sp?fullscreenApplet=true)
 
 ----
-Built with ❤️ and ☕ for the Google DeepMind hackathon.
+<p align="center">
+   Built with ❤️ and ☕ for the Google DeepMind hackathon.
+</p>
